@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BelazApp.Views.VehilcleParameter">
+    <ContentPage.Content>
+        <StackLayout Spacing="3"
+                     x:Name="Layout1"
+                     Margin="3">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="6*"/>
+                    <ColumnDefinition Width="3*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                </Grid.RowDefinitions>
+                <Button Clicked="TimeBack" Grid.Column="0"
+                        ImageSource="Back20x20.png"
+                        BackgroundColor="Transparent"/>
+                <Label x:Name="TimeLabel" Grid.Column="1"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center"/>
+                <Picker x:Name="Picker1" Grid.Column="2"
+                        SelectedIndexChanged="PickUnit"
+                        SelectedItem="Минуты">
+                    <Picker.Items>
+                        <x:String>Минуты</x:String>
+                        <x:String>Часы</x:String>
+                    </Picker.Items>
+                </Picker>
+                <Button Clicked="TimeForward" Grid.Column="3"
+                        ImageSource="next20x20.png"
+                        BackgroundColor="Transparent"/>
+            </Grid>
+            <Button Text="Избранное"
+                    CornerRadius="5"
+                    BackgroundColor="LightBlue"
+                    HeightRequest="35"
+                    BorderWidth="0"
+                    Margin="3"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

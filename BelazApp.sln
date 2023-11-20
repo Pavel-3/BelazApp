@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34202.233
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BelazApp.Android", "BelazApp\BelazApp.Android\BelazApp.Android.csproj", "{A1398CC2-78C4-4E4F-94A3-5FB37D96BA9C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BelazApp", "BelazApp\BelazApp\BelazApp.csproj", "{BBFEB1B4-EA87-4752-AEF5-A07EEA373058}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A1398CC2-78C4-4E4F-94A3-5FB37D96BA9C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1398CC2-78C4-4E4F-94A3-5FB37D96BA9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1398CC2-78C4-4E4F-94A3-5FB37D96BA9C}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{A1398CC2-78C4-4E4F-94A3-5FB37D96BA9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1398CC2-78C4-4E4F-94A3-5FB37D96BA9C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1398CC2-78C4-4E4F-94A3-5FB37D96BA9C}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{BBFEB1B4-EA87-4752-AEF5-A07EEA373058}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BBFEB1B4-EA87-4752-AEF5-A07EEA373058}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BBFEB1B4-EA87-4752-AEF5-A07EEA373058}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{BBFEB1B4-EA87-4752-AEF5-A07EEA373058}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BBFEB1B4-EA87-4752-AEF5-A07EEA373058}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BBFEB1B4-EA87-4752-AEF5-A07EEA373058}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {20AA1BC4-5D82-46A8-952A-2C9DB6C408F3}
+	EndGlobalSection
+EndGlobal
