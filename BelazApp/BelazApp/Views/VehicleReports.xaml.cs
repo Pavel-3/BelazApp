@@ -1,4 +1,6 @@
 ﻿using BelazApp.Models;
+using BelazApp.Services.Interfaces;
+using BelazApp.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,14 +16,20 @@ namespace BelazApp.Views
     public partial class VehicleReports : ContentPage
     {
         public VehicleReport vehicleReport { get; set; }
-        public VehicleReports(int vehicleId)
+        private readonly IVehicleService _vehicleService;
+        public VehicleReportsViewModel viewModel { get; set; }
+        public VehicleReports(BasicVehicleInfo vehicle, IVehicleService vehicleService)
         {
+
+            _vehicleService = vehicleService;
             Title = "Отчёты";
             InitializeComponent();
-            vehicleReport = Data.GetReports(vehicleId);
+            viewModel = new VehicleReportsViewModel(vehicle, _vehicleService);
+            BindingContext = viewModel;
+
             var listView = new ListView()
             {
-                ItemsSource = vehicleReport.vehicleReporDatas,
+                ItemsSource = viewModel.VehicleReport,
                 HasUnevenRows = true,
                 SelectionMode = 0,
                 ItemTemplate = new DataTemplate(() =>
@@ -35,5 +43,10 @@ namespace BelazApp.Views
 
             Layout1.Children.Add(listView);
         }
+        //protected override async void OnAppearing()
+        //{
+        //    await MainPageViewModel.GetVehicles();
+        //    base.OnAppearing();
+        //}
     }
 }

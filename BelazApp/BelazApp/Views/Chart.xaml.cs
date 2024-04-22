@@ -15,32 +15,31 @@ namespace BelazApp.Views
     {
         public Chart(Parameter parameter)
         {
-            Title = parameter.ParameterName;
-            InitializeComponent();
-            List<Models.Point> points = Data.GetPoints(parameter);
-            List<ChartEntry> entries = new List<ChartEntry>();
-            foreach (var point in points)
-            {
-                entries.Add(new ChartEntry(point.value)
-                {
-                    Label = $"{point.time.ToString(@"hh\:mm")}",
-                    ValueLabel = point.value.ToString()
-                }) ;
-            }
-            var chart = new LineChart
-            {
-                Entries = entries,
-                LineMode = LineMode.Straight,
-                LabelTextSize = 20,
-                LabelOrientation = Orientation.Horizontal,
-                ValueLabelOrientation = Orientation.Horizontal
-            };
-            Layout1.Children.Add(new ChartView()
-            {
-                Chart = chart,
-                HeightRequest = 400,
-                WidthRequest = 200
-            });
+            //InitializeComponent();
+            //List<Models.Point> points = Data.GetPoints(parameter);
+            //List<ChartEntry> entries = new List<ChartEntry>();
+            //foreach (var point in points)
+            //{
+            //    entries.Add(new ChartEntry(point.value)
+            //    {
+            //        Label = $"{point.time.ToString(@"hh\:mm")}",
+            //        ValueLabel = point.value.ToString()
+            //    }) ;
+            //}
+            //var chart = new LineChart
+            //{
+            //    Entries = entries,
+            //    LineMode = LineMode.Straight,
+            //    LabelTextSize = 20,
+            //    LabelOrientation = Orientation.Horizontal,
+            //    ValueLabelOrientation = Orientation.Horizontal
+            //};
+            //Layout1.Children.Add(new ChartView()
+            //{
+            //    Chart = chart,
+            //    HeightRequest = 400,
+            //    WidthRequest = 200
+            //});
         }
     }
 }

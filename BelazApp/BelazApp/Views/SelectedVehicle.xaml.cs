@@ -1,4 +1,5 @@
 ﻿using BelazApp.Models;
+using BelazApp.Services.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,14 +14,15 @@ namespace BelazApp.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class SelectedVehicle : TabbedPage
     {
-        public SelectedVehicle(int vehicleId)
+        private readonly IVehicleService _vehicleService;
+        public SelectedVehicle(BasicVehicleInfo basicVehicleInfo, IVehicleService vehicleService)
         {
-            var vehicleName = Data.GetVehicles().FirstOrDefault(x => x.Id == vehicleId).Name;
+            _vehicleService = vehicleService;
+            var vehicleName = basicVehicleInfo.Id;
             Title = vehicleName;
-            Children.Add(new VehilcleParameter(vehicleId));
-            Children.Add(new VehicleReports(vehicleId));
+            Children.Add(new VehilcleParameter(basicVehicleInfo, _vehicleService));
+            Children.Add(new VehicleReports(basicVehicleInfo, _vehicleService));
             InitializeComponent();
-
         }
     }
 }

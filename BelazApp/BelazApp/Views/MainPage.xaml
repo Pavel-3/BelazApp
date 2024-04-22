@@ -1,22 +1,21 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:viewmodels="clr-namespace:ViewModels.BelazApp.ViewModels" x:DataType="viewmodels:MainViewModel"
              x:Class="BelazApp.Views.MainPage">
     <ContentPage.Content>
-        <StackLayout>
-            <ListView 
+        <StackLayout x:Name="Layout1">
+            <ListView x:Name="VehicleList"
                 ItemTapped="VehicleSelected"
                 SelectionMode="None"
-                x:Name="VehicleList" 
                 HasUnevenRows="True"
-                ItemsSource="{Binding Vehicles}">
+                ItemsSource="{Binding Vehicles}" >
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ImageCell
-                            ImageSource="{Binding ImagePath}"
-                            Text="{Binding Name}"
-                            Detail="{Binding Model}"
-                            />
+                        ImageSource="BasePicture.png"
+                        Text="{Binding Id}"
+                        Detail="{Binding Description}"
+                        />
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>

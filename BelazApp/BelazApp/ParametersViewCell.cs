@@ -1,4 +1,5 @@
-﻿using Xamarin.Forms;
+﻿using BelazApp.Models;
+using Xamarin.Forms;
 
 namespace BelazApp
 {
@@ -48,9 +49,9 @@ namespace BelazApp
             set { SetValue(TitleProperty, value); }
         }
 
-        public string PatemeterValue
+        public Parameter PatemeterValue
         {
-            get { return (string)GetValue(ValueProperty); }
+            get { return (Parameter)GetValue(ValueProperty); }
             set { SetValue(ValueProperty, value); }
         }
 
@@ -61,7 +62,8 @@ namespace BelazApp
             if (BindingContext != null)
             {
                 titleLabel.Text = Title;
-                valueLabel.Text = PatemeterValue;
+                valueLabel.Text = PatemeterValue.Value.ToString() + " " + PatemeterValue.Unit;
+                valueLabel.TextColor = PatemeterValue.IsValid ? Color.White : Color.Red;
             }
         }
     }

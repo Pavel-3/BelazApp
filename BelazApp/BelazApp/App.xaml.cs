@@ -2,6 +2,9 @@
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using BelazApp.Views;
+using Nancy.TinyIoc;
+using BelazApp.Services.Interfaces;
+using BelazApp.Services;
 
 namespace BelazApp
 {
@@ -11,7 +14,7 @@ namespace BelazApp
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new MainPage());
+            MainPage = new NavigationPage(new MainPage(new VehicleServiceOffline()));
         }
 
         protected override void OnStart()
